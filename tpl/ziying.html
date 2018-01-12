@@ -1,0 +1,238 @@
+<!doctype>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自营加上订单</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/icons-extra.css" />
+		<link rel="stylesheet" href="../css/index.css" />
+		<script src="../js/mui.js"></script>
+		<script src="../js/vue.js"></script>
+		<style>
+				.checked{
+					background: gray
+				}
+				.down_list{
+					font-size: 14px;
+					width:95%;
+					height:30px;
+					text-align: center;
+					line-height: 30px;
+					border-bottom: 1px solid #E5E5E5;
+				}
+		</style>
+	</head>
+	<body>
+		<!--顶部-->
+		<div id="vue_ullist">
+			<ul  v-show="open_down_list" style="width:100%;background-color: white;position:fixed;top:41px;left: 0;z-index: 15;padding:0 2.5%">
+					<li class="down_list" style="height:34px;padding: 2px;">
+						<div class="mui-input-row mui-search" style="width:70%;height:100%;margin-left: 15%;border-radius:9px;background-color: #fff;">
+						    <input type="search" class="mui-input-clear" placeholder="请输入药名">
+						</div>
+					</li>
+					<li class="down_list" v-for="(item,index) in down_list">{{item}}</li>
+			</ul>
+		    <header class="mui-bar mui-bar-nav" id="header" style="height:75px;">
+				<h1 @click="downlist" class="mui-title">客户终端口<span class="mui-icon mui-icon-arrowdown"></span></h1>
+				
+				<div class="mui-input-row mui-search" style="margin-top: 35px;">
+				    <input type="search" class="mui-input-clear" placeholder="请输入药名">
+				</div>
+			</header>
+		</div>
+	
+		<div class="mui-content" style="margin-top:76px;" id="app">
+			<form>
+				<div class="porder-cont">
+					<ul class="mui-table-view">
+						<li v-for="(item,index) in list" class="mui-table-view-cell">
+							<h4 v-text="item.title"></h4>
+							<ul id="porder-shop" class="mui-row">
+								<li v-text="item.gys" class="mui-col-xs-4"></li>
+								<li v-text="item.chandi" class="mui-col-xs-4"></li>
+								<li v-text="item.date" class="mui-col-xs-4"></li>
+								<li v-text="item.guige" class="mui-col-xs-4"></li>
+								<li class="mui-col-xs-4">库存：{{item.stock_quantity}}</li>
+								<li class="mui-col-xs-4">包装：{{item.bz}}</li>
+							</ul>
+							<div class="order-q">
+								<p class="order-color">¥{{item.price}}</p>
+								<div class="mui-numbox" data-numbox-step='1' data-numbox-min='0' data-numbox-max='100'>
+								    <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+								    <input class="mui-input-numbox" type="number" value="1"/>
+								    <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+								</div>
+							    <button :id='"porder_xia"+index' type="button" class="mui-btn porder-btn" @click="order(index)" :class="{ 'checked': item.checkes}">{{item.test}}</button>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div id="porder-btn">
+					<button type="button" class="mui-btn porder-btn">提交审核</button>
+				    <button type="button" class="mui-btn mui-btn-blue" @click='check_unsubmit'>查看未提交</button>
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript">
+			var list=new Vue({
+				el:"#vue_ullist",
+				data:{
+					open_down_list:false,
+					down_list:['云南白药集团有限公司','云南白药集团有限公司','云南白药集团有限公司','云南白药集团有限公司','云南白药集团有限公司']
+				},
+				methods:{
+					downlist:function(){
+					
+						this.open_down_list=!this.open_down_list;
+						console.log(111)
+					}
+				}
+			})
+			const app=new Vue({
+				el:'#app',
+				data:{
+
+					list:[
+					   {
+					   	"id":1,
+					   	"title":"1钙尔奇DDD1 碳酸钙D3咀嚼片",
+					   	"gys":"惠氏制药有限公司",
+					   	"chandi":"产地：云南",
+					   	"date":"有效期：2019-10-30",
+					   	"guige":"规格：300mg*30片",
+					   	"stock_quantity":1000,
+					   	"bz":"400盒/件",
+					   	"price":26.8,
+							"checked":0,
+							"test":'下单',
+							"checkes":false,
+					   },
+					  {
+					   	"id":2,
+					   	"title":"2钙尔奇D2 碳酸钙D3咀嚼片",
+					   	"gys":"惠氏制药有限公司",
+					   	"chandi":"产地：北京",
+					   	"date":"有效期：2019-10-30",
+					   	"guige":"规格：300mg*30片",
+					   	"stock_quantity":1100,
+					   	"bz":"400盒/件",
+					   	"price":36.8,
+							"checked":0,
+							"test":'下单',
+							"checkes":false,
+					   },
+					    {
+					   	"id":3,
+					   	"title":"3钙尔奇D3 碳酸钙D3咀嚼片",
+					   	"gys":"惠氏制药有限公司",
+					   	"chandi":"产地：上海",
+					   	"date":"有效期：2019-10-30",
+					   	"guige":"规格：300mg*30片",
+					   	"stock_quantity":100,
+					   	"bz":"400盒/件",
+					   	"price":77,
+							"checked":0,
+							"test":'下单',
+							"checkes":false,
+					   },
+					   {
+					   	"id":4,
+					   	"title":"4钙尔奇D 碳酸钙D3咀嚼片",
+					   	"gys":"惠氏制药有限公司",
+					   	"chandi":"产地：云佛山",
+					   	"date":"有效期：2019-10-30",
+					   	"guige":"规格：300mg*30片",
+					   	"stock_quantity":8000,
+					   	"bz":"400盒/件",
+					   	"price":999,
+							"checked":0,
+							"test":'下单',
+							"checkes":false,
+					   },
+					    {
+					   	"id":5,
+					   	"title":"5钙尔奇D 碳酸钙D3咀嚼片",
+					   	"gys":"惠氏制药有限公司",
+					   	"chandi":"产地：大理寺",
+					   	"date":"有效期：2019-10-30",
+					   	"guige":"规格：300mg*30片",
+					   	"stock_quantity":10000,
+					   	"bz":"400盒/件",
+					   	"price":28,
+							"checked":0,
+							"test":'下单',
+							"checkes":false,
+					   },
+					    {
+					   	"id":6,
+					   	"title":"6钙尔奇D 碳酸钙D3咀嚼片",
+					   	"gys":"惠氏制药有限公司",
+					   	"chandi":"产地：海南",
+					   	"date":"有效期：2019-10-30",
+					   	"guige":"规格：300mg*30片",
+					   	"stock_quantity":2000,
+					   	"bz":"400盒/件",
+					   	"price":25.5,
+							"checked":0,
+							"test":'下单',
+							"checkes":false,
+					   },
+					    {
+					   	"id":7,
+					   	"title":"钙尔奇Dlast 碳酸钙D3咀嚼片",
+					   	"gys":"惠氏制药有限公司",
+					   	"chandi":"产地：河北",
+					   	"date":"有效期：2019-10-30",
+					   	"guige":"规格：300mg*30片",
+					   	"stock_quantity":4000,
+					   	"bz":"400盒/件",
+					   	"price":18,
+							"checked":0,
+							"test":'下单',
+							"checkes":false,
+					   },
+					]
+				},
+				methods:{
+						order:function(index){
+							this.num=index;
+                            var btn=document.getElementById('porder_xia'+index);
+
+							if(this.list[index].checked==0){
+								this.list[index].checked=1;
+								console.log(this.list[index])
+								this.list[index].test="取消";
+								this.list[index].checkes=true;
+								[...btn.previousElementSibling.children].forEach((x)=>{
+									x.setAttribute('disabled','disabled');
+								});
+							}else{
+								this.list[index].checked=0;
+								this.list[index].test="下单";
+								this.list[index].checkes=false;
+								[...btn.previousElementSibling.children].forEach((x)=>{
+									x.removeAttribute('disabled');
+								})
+							}
+						},
+						check_unsubmit:function(){
+							console.log(1)
+							function compare(property){
+				    			return function(b,a){
+							        var value1 = a[property];
+							        var value2 = b[property];
+							        return value1 - value2;
+				    					}
+									}
+									this.list.sort(compare('checked'))
+						}
+				}
+			})
+		</script>
+		<script type="text/javascript">
+			mui.init();
+		</script>
+	</body>
+</html>

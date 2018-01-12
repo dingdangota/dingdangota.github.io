@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="../css/mui.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+</head>
+
+<body>
+	<header class="mui-bar mui-bar-nav" id="header">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">订单</h1>
+	</header>
+	<nav class="mui-bar mui-bar-tab" id="index-nav">
+		<a class="mui-tab-item mui-active" id="home">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" id="order">
+			<span class="mui-icon mui-icon-chatboxes"></span>
+			<span class="mui-tab-label">下单</span>
+		</a>
+		<a class="mui-tab-item"id="porder">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-cart mui-spin"><span class="mui-badge">9</span></span>
+			<span class="mui-tab-label">自营</span>
+		</a>
+		<a class="mui-tab-item" id="vorder">
+			<span class="mui-icon mui-icon-list"></span>
+			<span class="mui-tab-label">订单</span>
+		</a>
+	</nav>
+	<div class="mui-content">
+	    <div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<h4 v-text="item.title">客户名称：李晓丽</h4>
+					<ul id="porder-shop" class="mui-row">
+						<li class="mui-col-xs-6">订单编号：10012346890</li>
+						<li class="mui-col-xs-6">订单状态：<span style="color: red;">已收货</span></li>
+						<li class="mui-col-xs-12">收货地址：北京朝阳区百子湾路13号</li>
+						<li class="rt"><span class="mui-icon mui-icon-arrowdown"></span></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<ul id="jindu">
+			<li>
+				<i class="active"></i>
+				<span>已确认收货</span>
+				<p>2016-01-19 20:12:33</p>
+			</li>
+			<li>
+				<i></i>
+				<span>已签收,签收人：李晓丽</span>
+				<p>2016-01-19 18:12:33</p>
+			</li>
+			<li>
+				<i></i>
+				<span>杭州顺丰物流快递公司西区黄龙上午揽收站安排投递</span>
+				<p>2016-01-19 15:12:33</p>
+			</li>
+			<li>
+				<i></i>
+				<span>包裹已被揽收（揽收员姓名：张三电话：15888888888）</span>
+				<p>2016-01-19 11:12:33</p>
+			</li>
+			<li>
+				<i></i>
+				<span>订单打包完成，等待出库</span>
+				<p>2016-01-19 09:12:33</p>
+			</li>
+			<li>
+				<i></i>
+				<span>订单通过审核</span>
+				<p>2016-01-19 08:12:33</p>
+			</li>
+			<li>
+				<i></i>
+				<span>订单提交成功</span>
+				<p>2016-01-19 07:12:33</p>
+			</li>
+		</ul>
+	</div>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init()
+	</script>
+</body>
+
+</html>

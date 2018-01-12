@@ -1,0 +1,304 @@
+/*公共样式*/
+.title-color{
+	font-weight: 900;
+	color:#000000;
+}
+*{ touch-action: none; }
+
+body{
+    font:"microsoft yahei",Arial,Helvetica,sans-serif;
+    margin:0;
+    padding:0;
+    background-color: #fff;
+}
+p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+a{
+    color:#000;
+    text-decoration:none;
+}
+a:hover{
+    color:#ff0700;
+    text-decoration:none;
+}
+img{
+    vertical-align:bottom;
+}
+*{
+    box-sizing:border-box;
+}
+/*左浮动*/
+.lf{float:left;}
+/*右浮动*/
+.rt{float:right;}
+.clear{clear:both;}
+/*index  css  样式*/
+.mui-content{
+	background-color:#fff ;
+}
+#header{
+	background-color: #E51C23;
+
+}
+#index-slider{
+	margin-top: 44px;
+}
+#header h1{
+	color:#fff;
+}
+#header a{
+	color: #fff;
+}
+
+#ct{
+	padding-top:2px;
+	padding-bottom:2px;
+}
+#prog li h4{
+	margin: 5% 0;
+}
+#prog>li>span {
+	margin-left:5%;
+	color: #E51C23;
+}
+#prog li span {
+
+	color: #E51C23;
+}
+#prog li p{
+	height:10px;
+	width:80%;
+	margin-bottom: 1%;
+	border-radius: 5px;
+	background-color: #E6E6E6;
+	display: inline-block;
+}
+.cont{
+	border:1px solid #E5E5E5;
+	border-top:none;
+	border-left:none;
+}
+.cont ul li a span{
+	color: #E51C23;
+}
+.cont ul li a i{
+	margin-top:10px;
+	color: #E51C23;
+}
+.cont ul li a p{
+	margin-top:10px;
+	color: #E51C23;
+}
+#index-zt ul li div.title-color{
+	margin: 5%;
+	text-align: center;
+}
+#index-zt ul li div.title-color span:first-child{
+	color:#000;
+	font-size: 1.2rem;
+}
+
+#index-tb ul li div.title-color{
+	margin: 5%;
+	text-align: center;
+}
+#index-tb ul li div.title-color span:first-child{
+	color:#000;
+	font-size: 1.2rem;
+}
+#index-or li{
+	margin:5%;
+}
+#index-or li span{
+	float: right;
+}
+#index-or li p{
+	float: left;
+}
+#index-sq li{
+	margin:5%;
+}
+#index-sq li span{
+	float: right;
+}
+#index-sq li p{
+	float: left;
+}
+#index-order li{
+	margin:5%;
+}
+#index-order li span{
+	float: right;
+}
+
+.index-title span{
+	float:right;
+}
+#offCanvasSide{
+	background: #fff;
+}
+#offCanvasSide div.title{
+	font-size:2rem;
+	padding-bottom:5%;
+}
+#offCanvasSide div{
+	color:#000;	
+}
+#offCanvasSide ul{
+	background: #fff;
+	color: #000;
+}
+
+/*massage 的css 样式*/
+.mass{
+	margin-top:10px;
+	position: relative;
+}
+.mass li{
+	border:1px solid #E5E5E5;
+	padding:20px;
+}
+.mass i{
+	position: absolute;
+	top:25px;
+	left:5px;
+	width:11px;
+	height:11px;
+	border-radius: 50%;
+	background: red;
+}
+.mass-no{
+	margin-top:10px;
+	position: relative;
+}
+.mass-no li{
+	border:1px solid #E5E5E5;
+	padding:20px;
+}
+.mass-no i{
+	position: absolute;
+	top:25px;
+	left:5px;
+	width:11px;
+	height:11px;
+	border-radius: 50%;
+	background: blue;
+}
+#mass-pass{
+	border-top:8px solid #1CB046;
+	border-radius:5px;
+}
+#mass-no{
+	border-top:8px solid #E32929;
+	border-radius:5px;
+}
+/*order 的 css样式*/
+
+
+#slider div a.mui-active{
+	color:#E32929;
+	border-bottom: 2px silid #E32929;
+	border:none;
+}
+.order-color{
+	color:#E32929;
+	display: inline-block;
+}
+.order-sh{
+	float: right;
+}
+.order-q{
+	margin-top:2%;
+	
+}
+.order-q div{
+	margin-left:30%;
+}
+.order-q button{
+	float: right;
+	width:20%;
+}
+.order-q div.mui-number{
+	margin-left: 3%;
+}
+#sliderProgressBar{
+    background-color: red;
+}
+
+/*order_review 的 css 样式*/
+.mui-input-row{
+	background-color: #fff;
+}
+.review-cont{
+	margin-top: 5%;
+}
+/*porder 的 css样式*/
+#header input {
+	background-color: #FCE8E9;
+	border-radius: 15px;
+}
+#porder-shop{
+	margin:2% auto;
+}
+#porder-shop li {
+	font-size: 0.75rem;
+}
+.porder-cont{
+	margin-top:35px;
+}
+#porder-btn{
+	position:fixed;
+	bottom:0;
+	right:5;
+}
+.porder-btn{
+	color: #fff;
+	background: #E51C23;
+}
+/*logo 的 css样式*/
+.logo{
+	width:5%;
+	height:5%;
+	display:table-cell;
+	vertical-align:middle;
+}
+.logo img{
+	width:100%;
+
+}
+
+/*onorder 的css样式*/
+#jindu{
+	margin-top:30px;
+}
+#jindu li{
+	position: relative;
+	margin-left:10px;
+	padding:10px 20px;
+	border-left:2px solid #E5E5E5;
+}
+#jindu i.active{
+	position:absolute;
+	left:-9px;
+	top:0;
+	width:15px;
+	height:15px;
+	background: red;
+	border-radius: 50%;
+}
+#jindu i{
+	position:absolute;
+	left:-7px;
+	top:0;
+	width:11px;
+	height:11px;
+	background: #E5E5E5;
+	border-radius: 50%;
+}
+#jindu span{
+	font-size:0.85rem;
+}
+
